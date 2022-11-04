@@ -16,7 +16,7 @@
    |calc
       @1
          $reset = *reset;
-         $num = $reset ? 0 : (>>1$num + 1);
+         $num = $reset ? 0 : (>>2$num + 1);
          $valid = $num;
          $valid_or_reset = $valid || $reset;
       ?$valid_or_reset
@@ -27,11 +27,11 @@
             $diff[31:0] = $val1[31:0] - $val2[31:0];
             $prod[31:0] = $val1[31:0] * $val2[31:0];
             $quot[31:0] = $val1[31:0] / $val2[31:0];
-           
             $val1[31:0] = >>2$out[31:0];
             
          @2
-            $out[31:0] = $reset ? 0 : ($op[1] ? ($op[0] ? $quot[31:0] : $prod[31:0]) : ($op[0] ? $diff[31:0] : $sum[31:0]));  
+            $mem[31:0] = $reset ? 0 : $op[2] ? ($op[0] ? >>1$mem[31:0] : $val1[31:0]) : $val1[31:0];
+            $out[31:0] = $reset ? 0 : ($op[2] ? ((!$op[1] && !$op[0]) ? $mem[31:0] : 0) : ($op[1] ? ($op[0] ? $quot[31:0] : $prod[31:0]) : ($op[0] ? $diff[31:0] : $sum[31:0])));  
             
          
          
