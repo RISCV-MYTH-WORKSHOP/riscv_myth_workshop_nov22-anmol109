@@ -16,21 +16,28 @@
    |calc
       @1
          $reset = *reset;
-         $val2[31:0] = $rand1[3:0];
-         $sum[31:0] = $val1[31:0] + $val2[31:0];
-         $diff[31:0] = $val1[31:0] - $val2[31:0];
-         $prod[31:0] = $val1[31:0] * $val2[31:0];
-         $quot[31:0] = $val1[31:0] / $val2[31:0];
          $num = $reset ? 0 : (>>1$num + 1);
-         $val1[31:0] = >>2$out[31:0];
-      @2
-         $out[31:0] = ($reset || !$valid) ? 0 : ($op[1] ? ($op[0] ? $quot[31:0] : $prod[31:0]) : ($op[0] ? $diff[31:0] : $sum[31:0]));  
          $valid = $num;
+         $valid_or_reset = $valid || $reset;
+      ?$valid_or_reset
+         @1
+            
+            $val2[31:0] = $rand1[3:0];
+            $sum[31:0] = $val1[31:0] + $val2[31:0];
+            $diff[31:0] = $val1[31:0] - $val2[31:0];
+            $prod[31:0] = $val1[31:0] * $val2[31:0];
+            $quot[31:0] = $val1[31:0] / $val2[31:0];
+           
+            $val1[31:0] = >>2$out[31:0];
+            
+         @2
+            $out[31:0] = $reset ? 0 : ($op[1] ? ($op[0] ? $quot[31:0] : $prod[31:0]) : ($op[0] ? $diff[31:0] : $sum[31:0]));  
+            
          
          
    
    // Assert these to end simulation (before Makerchip cycle limit).
-         *passed = *cyc_cnt > 40;
-         *failed = 1'b0;
+   *passed = *cyc_cnt > 40;
+   *failed = 1'b0;
 \SV
    endmodule
