@@ -72,5 +72,10 @@ Output of program to compute the sum of numbers 1 to 9
 
 
 - ![image](https://user-images.githubusercontent.com/67062356/200189996-522312b1-08bf-4d82-9bd3-c467639c19f5.png)
+Program to compute sum of nums using system calls
+![image](https://user-images.githubusercontent.com/67062356/200190291-c4ffc775-2f45-4e77-b96e-76dd40315663.png)
+- Assembly level program
+![image](https://user-images.githubusercontent.com/67062356/200190330-7a26a613-4406-4372-a9db-bc6967789df0.png)
+
 - 
 
