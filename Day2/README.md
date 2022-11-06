@@ -77,5 +77,14 @@ Program to compute sum of nums using system calls
 - Assembly level program
 ![image](https://user-images.githubusercontent.com/67062356/200190330-7a26a613-4406-4372-a9db-bc6967789df0.png)
 
-- 
+- Spike output
+![image](https://user-images.githubusercontent.com/67062356/200191739-a1d7f9ea-2902-4d2b-97f5-c84addf92ef7.png)
+- Assembly File
+![image](https://user-images.githubusercontent.com/67062356/200191776-ed4a1fca-06b7-4332-826b-5aefcec574ff.png)
+- Simulation output using RV core
+![image](https://user-images.githubusercontent.com/67062356/200191803-9f2c9503-84a4-4d6f-935a-463f6862915e.png)
+- Hex Output File
+![image](https://user-images.githubusercontent.com/67062356/200191861-27d7db25-14be-4c75-af40-d9b93014f574.png)
+
+
 
