@@ -85,6 +85,6 @@ Program to compute sum of nums using system calls
 ![image](https://user-images.githubusercontent.com/67062356/200191803-9f2c9503-84a4-4d6f-935a-463f6862915e.png)
 - Hex Output File
 ![image](https://user-images.githubusercontent.com/67062356/200191861-27d7db25-14be-4c75-af40-d9b93014f574.png)
-
+## This concludes Day 2
 
 
