@@ -6,6 +6,28 @@
 # RISC-V based MYTH WORKSHOP
 This repository contains all the information needed to build a RISC-V pipelined core, which has support of base interger RV32I instruction format using TL-Verilog on makerchip platform. This was done as part of a 5 day workshop organised by VSD and Redwood EDA
 # Table of Contents
+- [Introduction to RISC-V ISA](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#gnu-compiler-toolchain)
+  - Types of Instructions
+- [GNU Compiler Toolchain](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#gnu-compiler-toolchain)
+- [ABI](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#abi)
+- [MakerChip](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#makerchip)
+  - Combinational Logic
+  - Sequential Logic
+  - Pipelined Logic
+  - Validity
+- [RISC-V Micro Architecture](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#risc-v-micro-architecture)
+  - Fetch Cycle
+  - Decode Cycle
+  - ALU
+  - Register File read and write
+  - Control Logic
+- [Pipelining](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#pipelining)
+  - Hazards
+  - Load Store Instructions
+  - Jump Instructions
+- [Complete Risc-V CPU core](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#complete-risc-v-cpu-core)
+- [Acknowledgements](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_nov22-anmol109#acknowledgements)
+
 
 # Introduction to RISC-V ISA
 ISA-Instruction Set Architecture
