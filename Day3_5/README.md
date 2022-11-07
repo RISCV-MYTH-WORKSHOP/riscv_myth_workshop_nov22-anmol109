@@ -46,7 +46,7 @@ Validity is the notion of when values of signals are meaningful.
 - Calculator with memory and recall
 
 # RISC-V Micro Architecture
-![image](https://user-images.githubusercontent.com/67062356/200195603-0a5bc7f6-94c1-4b3a-a9f1-002bdee32d14.png)
+- ![image](https://user-images.githubusercontent.com/67062356/200195603-0a5bc7f6-94c1-4b3a-a9f1-002bdee32d14.png)
  We will implement this design using 4 stages:
 - Fetch
 - Decode
@@ -104,14 +104,14 @@ Outputs:
 ## Control Logic
 In RISC V branches are defined as conditional branches, i.e, they will only execute when certain conditions are met whereas jumps are unconditional.
 ![image](https://user-images.githubusercontent.com/67062356/200275235-6f634ba1-a55b-4c9e-81fc-75fe48048211.png)
--Final branch Code
+- Final branch Code
 ![image](https://user-images.githubusercontent.com/67062356/200275492-511fcad9-0afe-4236-9716-6ded3618b925.png)
-Final output after implementing branch, working RISC-V core
+- Final output after implementing branch, working RISC-V core
 # Pipelining
 ![image](https://user-images.githubusercontent.com/67062356/200276363-2f5e9d8b-fc1d-4fb6-b906-2a91f86b7e87.png)
-Converting non-piepleined CPU to pipelined CPU using timing abstract feature of TL-Verilog. This allows easy retiming wihtout any risk of funcational bugs
-A waterfall logic diagram makes it easier for us to see the flow of logic and makes pipelining simpler.
-Pipelining is performed to increase speed and throughput, but while pipelining  problems arise,
+- Converting non-piepleined CPU to pipelined CPU using timing abstract feature of TL-Verilog. This allows easy retiming wihtout any risk of funcational bugs
+- A waterfall logic diagram makes it easier for us to see the flow of logic and makes pipelining simpler.
+- Pipelining is performed to increase speed and throughput, but while pipelining  problems arise,
 ![image](https://user-images.githubusercontent.com/67062356/200277050-4db1e274-02ca-431a-9997-087023cb6d20.png)
 ## Hazards
 Due to interdependent nature of data between cycles, issues arise, these are known as hazards.
@@ -122,14 +122,14 @@ In the figure above, 2 kinds of hazards are shown
 -Instruction cycle explanantion
 One simple solution is to make the circuit run every 3 cycles, but this leads to slower performance
 ![image](https://user-images.githubusercontent.com/67062356/200277973-ce70cebf-d4e2-4026-8365-4823765b0de8.png)
-This resolves the control flow hazard
-We will use the following code to implement this:
-```$start = ((>>1$reset)&&(!$reset))? 1'b1: 1'b0;```
-```$valid = $start ? 1'b1: >>3$valid ? 1'b1 : 1'b0;```
-To avoid the read after write hazard use the following code:
-```$src1_value[31:0] = ((>>1$rd == $rs1) && (>>1$rf_wr_en))? >>1$result : $rf_rd_data1[31:0];```
-```$src2_value[31:0] = ((>>1$rd == $rs2) && (>>1$rf_wr_en))? >>1$result : $rf_rd_data2[31:0];```
-Here we take 2 cycle penalty for branch instructions
+- This resolves the control flow hazard
+- We will use the following code to implement this:
+- ```$start = ((>>1$reset)&&(!$reset))? 1'b1: 1'b0;```
+- ```$valid = $start ? 1'b1: >>3$valid ? 1'b1 : 1'b0;```
+- To avoid the read after write hazard use the following code:
+- ```$src1_value[31:0] = ((>>1$rd == $rs1) && (>>1$rf_wr_en))? >>1$result : $rf_rd_data1[31:0];```
+- ```$src2_value[31:0] = ((>>1$rd == $rs2) && (>>1$rf_wr_en))? >>1$result : $rf_rd_data2[31:0];```
+- Here we take 2 cycle penalty for branch instructions
 
 ## Load Store Instructions
 #### Inputs:
