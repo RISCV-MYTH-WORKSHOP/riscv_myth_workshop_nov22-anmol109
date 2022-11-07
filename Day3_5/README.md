@@ -107,18 +107,18 @@ Outputs:
 
 - ```$rf_rd_data1[31:0]```: data from read index 1.
 - ```$rf_rd_data2[31:0]```: data from read index 2.
-![image](https://user-images.githubusercontent.com/67062356/200196301-50c0fe86-945d-4e0a-990a-05908a841230.png)
+![image](https://user-images.githubusercontent.com/67062356/200196301-50c0fe86-945d-4e0a-990a-05908a841230.png)    
 - final code for reg file read and write
 
 
 ## Control Logic
 In RISC V branches are defined as conditional branches, i.e, they will only execute when certain conditions are met whereas jumps are unconditional.
-![image](https://user-images.githubusercontent.com/67062356/200275235-6f634ba1-a55b-4c9e-81fc-75fe48048211.png)
+![image](https://user-images.githubusercontent.com/67062356/200275235-6f634ba1-a55b-4c9e-81fc-75fe48048211.png)    
 - Final branch Code
-![image](https://user-images.githubusercontent.com/67062356/200275492-511fcad9-0afe-4236-9716-6ded3618b925.png)
+![image](https://user-images.githubusercontent.com/67062356/200275492-511fcad9-0afe-4236-9716-6ded3618b925.png)    
 - Final output after implementing branch, working RISC-V core
 # Pipelining
-![image](https://user-images.githubusercontent.com/67062356/200276363-2f5e9d8b-fc1d-4fb6-b906-2a91f86b7e87.png)
+![image](https://user-images.githubusercontent.com/67062356/200276363-2f5e9d8b-fc1d-4fb6-b906-2a91f86b7e87.png)    
 - Converting non-piepleined CPU to pipelined CPU using timing abstract feature of TL-Verilog. This allows easy retiming wihtout any risk of funcational bugs
 - A waterfall logic diagram makes it easier for us to see the flow of logic and makes pipelining simpler.
 - Pipelining is performed to increase speed and throughput, but while pipelining  problems arise,
